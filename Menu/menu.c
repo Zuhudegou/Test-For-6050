@@ -23,17 +23,8 @@ struct MenuProperty Menu_Global = {
 	.Window_H = 64,	 // 窗口高度
 };
 
-/*菜单用到的按键函数独立出来,方便移植和修改,比如没有编码器可以用上下两个按键代替;*/
 int8_t Menu_RollEvent(void) // 菜单滚动
 {
-	if (Key_Up_Get()) // 按键上接到PB15;
-	{
-		return 1;
-	}
-	if (Key_Down_Get()) // 按键下接到PB13;
-	{
-		return -1;
-	}
 	return Encoder_Get_Div4(); // 旋钮编码器PA8,PA9;
 }
 int8_t Menu_EnterEvent(void) // 菜单确认

@@ -27,10 +27,6 @@ extern const ChineseCell_t OLED_CF8x8[];
 extern const uint8_t Diode[];
 /*按照上面的格式，在这个位置加入新的图像数据声明*/
 extern const uint8_t Cursor[];
-extern const uint8_t Wallpaper[];
-extern const uint8_t XpWallpaper[];
-extern const uint8_t Win11Wallpaper[];
-//...
 	
 #endif
 

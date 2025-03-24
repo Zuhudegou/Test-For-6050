@@ -812,21 +812,6 @@
             </File>
           </Files>
         </Group>
-        <Group>
-          <GroupName>Tools</GroupName>
-          <Files>
-            <File>
-              <FileName>IC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Tools\IC.c</FilePath>
-            </File>
-            <File>
-              <FileName>IC.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Tools\IC.h</FilePath>
-            </File>
-          </Files>
-        </Group>
       </Groups>
     </Target>
   </Targets>

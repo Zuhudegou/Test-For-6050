@@ -66,27 +66,8 @@ int8_t Key_Back_Get(void)	//返回键
 	return 0;
 }
 
-int8_t Key_Up_Get(void)
-{
-	if(Key.Up)
-	{
-		Key.Up = 0;
-		return 1;
-	}
-	return 0;
-}
 
-int8_t Key_Down_Get(void)
-{
-	if(Key.Down)
-	{
-		Key.Down = 0;
-		return 1;
-	}
-	return 0;
-}
-
-void Key_Reset_All(void)	//清除所有按键标志位
+void Key_Reset_All(void)	
 {
 	Key.Enter = 0;
 	Key.Back = 0;
