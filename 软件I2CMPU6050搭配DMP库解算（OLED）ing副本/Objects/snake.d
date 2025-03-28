@@ -28,3 +28,6 @@
 .\objects\snake.o: .\Library\stm32f10x_usart.h
 .\objects\snake.o: .\Library\stm32f10x_wwdg.h
 .\objects\snake.o: .\Library\misc.h
+.\objects\snake.o: User\Snake.h
+.\objects\snake.o: .\Hardware\OLED.h
+.\objects\snake.o: .\Hardware\OLED_Data.h

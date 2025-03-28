@@ -10,34 +10,6 @@
  const int MAP_HEIGHT = (OLED_HEIGHT / SNAKE_SIZE);
 
 
-//箭头调试
-void Update_Arrow(float pitch , float roll)
-{
-	OLED_Clear();
-	
-	OLED_ShowSignedNum(1,20,pitch,2,OLED_8X16);
-	OLED_ShowSignedNum(1,40,roll,2,OLED_8X16);
-
-	if(pitch>10)
-	{
-		OLED_ShowImage(75,50,15,15,ArrowDown);
-	}
-	else if(pitch<-10)
-	{
-		OLED_ShowImage(75,20,15,15,ArrowUp);
-	}
-	
-	if(roll>10)
-	{
-		OLED_ShowImage(60,35,15,15,ArrowLeft);
-	}
-	else if(roll<-10)
-	{
-		OLED_ShowImage(90,35,15,15,ArrowRight);
-	}
-		
-	
-}
 
 
 
@@ -71,5 +43,42 @@ void Game_Update(Game *game)
 	
 }
 
+
+
+
+
+
+
+
+
+
+//箭头调试
+void Update_Arrow(float pitch , float roll)
+{
+	OLED_Clear();
+	
+	OLED_ShowSignedNum(1,20,pitch,2,OLED_8X16);
+	OLED_ShowSignedNum(1,40,roll,2,OLED_8X16);
+
+	if(pitch>10)
+	{
+		OLED_ShowImage(75,50,15,15,ArrowDown);
+	}
+	else if(pitch<-10)
+	{
+		OLED_ShowImage(75,20,15,15,ArrowUp);
+	}
+	
+	if(roll>10)
+	{
+		OLED_ShowImage(60,35,15,15,ArrowLeft);
+	}
+	else if(roll<-10)
+	{
+		OLED_ShowImage(90,35,15,15,ArrowRight);
+	}
+		
+	
+}
 
 

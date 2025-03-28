@@ -1,6 +1,10 @@
 #ifndef __SNAKE_H
 #define __SNAKE_H
 
+#include "OLED.h"
+
+
+
 
 typedef struct
 {
