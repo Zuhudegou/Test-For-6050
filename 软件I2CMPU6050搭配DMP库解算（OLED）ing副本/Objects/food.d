@@ -28,3 +28,7 @@
 .\objects\food.o: .\Library\stm32f10x_usart.h
 .\objects\food.o: .\Library\stm32f10x_wwdg.h
 .\objects\food.o: .\Library\misc.h
+.\objects\food.o: User\Food.h
+.\objects\food.o: .\Hardware\OLED.h
+.\objects\food.o: .\Hardware\OLED_Data.h
+.\objects\food.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h

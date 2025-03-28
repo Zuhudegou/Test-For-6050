@@ -17,6 +17,7 @@ uint8_t MPU_Get_Accelerome(short *ax,short *ay,short *az);//º”ÀŸ∂»
 
 int main(void)
 {
+	
 	OLED_Init();
 	MPU6050_Init();
 	MPU6050_DMP_Init();
@@ -25,8 +26,8 @@ int main(void)
 	while (1)
 	{
 
-		MPU6050_DMP_Get_Data(&Pitch,&Roll,&Yaw);
-        Update_Arrow(Pitch,Roll);		
+//		MPU6050_DMP_Get_Data(&Pitch,&Roll,&Yaw);
+//        Update_Arrow(Pitch,Roll);		
 		
 		
 		

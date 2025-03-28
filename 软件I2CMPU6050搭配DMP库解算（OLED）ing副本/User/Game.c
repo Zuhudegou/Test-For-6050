@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "OLED.h"
 #include <stdlib.h>
+#include "mpu6050.h"
 
  const int OLED_WIDTH = 128;
  const int OLED_HEIGHT = 64;
@@ -20,14 +21,8 @@
 //初始化蛇
 void Game_Init(Game *game)
 {
-	game->snake.body = (SnakePart *)malloc(sizeof(SnakePart) * MAP_WIDTH * MAP_HEIGHT);	
-	game->snake.body[0].x = MAP_WIDTH /2;
-	game->snake.body[0].y = MAP_WIDTH /2;//将蛇的位置初始化在中间的位置
-	game->snake.length = 1;
-	game->snake.direction = 1;//初始向右
-	
-	game->food.x = rand()% MAP_WIDTH;
-	game->food.y = rand()% MAP_HEIGHT;
+    Snake_Init(&game->snake);
+	Food_Init(&game->food);
 	
 	game->targetLength = 10;
 	game->gameTime = 0;
@@ -35,17 +30,42 @@ void Game_Init(Game *game)
 
 }
 
-void Game_Update(Game *game)
+void Game_Update(Game *game,float pitch,float roll)
 {
+	Snake_UpdateDirection(&game->snake,pitch,roll);
+	Snake_Move(&game->snake);
+	if(Snake_EatFood(&game->snake,game->food.x,game->food.y))
+	{
+		Food_Init(&game->food);
+		game->gameTime++;
+	}
 	
-	
-	
+	if(game->snake.length >= game->targetLength)
+	{
+		game->gameRunning = 0;
+	}
 	
 }
 
+void Game_Draw(Game *game)
+{
+	OLED_Clear();
+	Snake_Draw(&game->snake);
+	Food_Draw(&game->food);
+	
+	char buffer[32];
+	sprintf(buffer,"Length:%d%d",game->snake.length,game->targetLength);
+	OLED_ShowString(1,1,buffer,OLED_6X8);
+	sprintf(buffer,"Time: %d s",game->gameTime);
+	OLED_ShowString(0,1,buffer,OLED_6X8);
+}
 
-
-
+void Game_Reset(Game *game)
+{
+	game->gameRunning = 1;
+	free(game->snake.body);
+	Game_Init(game);
+}
 
 
 

@@ -31,3 +31,4 @@
 .\objects\snake.o: User\Snake.h
 .\objects\snake.o: .\Hardware\OLED.h
 .\objects\snake.o: .\Hardware\OLED_Data.h
+.\objects\snake.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h

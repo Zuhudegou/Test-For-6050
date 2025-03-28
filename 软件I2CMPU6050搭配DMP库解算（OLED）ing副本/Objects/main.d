@@ -45,3 +45,4 @@
 .\objects\main.o: User\Game.h
 .\objects\main.o: User\Food.h
 .\objects\main.o: User\Snake.h
+.\objects\main.o: .\Hardware\Mpu6050\inv_mpu.h
